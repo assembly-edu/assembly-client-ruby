@@ -96,6 +96,10 @@ module Assembly
       Assembly::ExclusionResource.new(self)
     end
 
+    def year_groups
+      Assembly::YearGroupResource.new(self)
+    end
+
     def on_token_refresh(&blk)
       @on_token_refresh = blk
     end
