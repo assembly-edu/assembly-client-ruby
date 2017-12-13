@@ -1,6 +1,5 @@
 module Assembly
   class CalendarEvent < ApiModel
-    include Assembly::Actions::Read
     include Assembly::Actions::List
   end
 
