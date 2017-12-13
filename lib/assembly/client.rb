@@ -88,6 +88,10 @@ module Assembly
       Assembly::TeachingGroupResource.new(self)
     end
 
+    def attendances
+      Assembly::AttendanceResource.new(self)
+    end
+
     def on_token_refresh(&blk)
       @on_token_refresh = blk
     end
