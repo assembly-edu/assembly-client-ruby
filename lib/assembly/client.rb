@@ -9,7 +9,11 @@ module Assembly
     end
 
     def get(url, params={})
-      response = @api.get url, params
+      if_modified_since = params.delete(:since)
+      headers = {}
+      headers.merge!({ 'IF_MODIFIED_SINCE': if_modified_since }) if if_modified_since
+
+      response = @api.get(url, params, headers)
       ok       = check_errors(response)
       if ok
         response.body
@@ -38,6 +42,10 @@ module Assembly
 
     def academic_years
       Assembly::AcademicYearResource.new(self)
+    end
+
+    def assessments
+      Assembly::AssessmentResource.new(self)
     end
 
     def assessment_points
