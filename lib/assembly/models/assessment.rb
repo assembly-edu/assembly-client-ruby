@@ -7,6 +7,11 @@ module Assembly
       response = client.get(path + '/grade_set', params)
       Util.build(response[:grade_set], client)
     end
+
+    def results(params={})
+      response = client.get(path + '/results', params)
+      Util.build(response, client)
+    end
   end
 
   Resource.build(Assessment)
