@@ -80,6 +80,10 @@ module Assembly
       Assembly::SchoolDetailResource.new(self)
     end
 
+    def facets
+      Assembly::FacetResource.new(self)
+    end
+
     def staff_members
       Assembly::StaffMemberResource.new(self)
     end

@@ -14,6 +14,7 @@ module Assembly
         calendar_event: CalendarEvent,
         contact: Contact,
         exclusion: Exclusion,
+        facet: Facet,
         grade_set: GradeSet,
         grade: Grade,
         list: List,
