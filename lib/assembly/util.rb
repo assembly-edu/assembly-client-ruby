@@ -6,21 +6,25 @@ module Assembly
 
     def self.models
       {
-        list: List,
-        assessment: Assessment,
+        academic_year: AcademicYear,
+        aspect: Aspect,
         assessment_point: AssessmentPoint,
+        assessment: Assessment,
+        attendance: Attendance,
         calendar_event: CalendarEvent,
         contact: Contact,
+        exclusion: Exclusion,
         grade_set: GradeSet,
         grade: Grade,
-        aspect: Aspect,
+        list: List,
         registration_group: RegistrationGroup,
         result: Result,
-        teaching_group: TeachingGroup,
         school_detail: SchoolDetail,
         staff_member: StaffMember,
         student: Student,
         subject: Subject,
+        teaching_group: TeachingGroup,
+        year_group: YearGroup
       }
     end
 
