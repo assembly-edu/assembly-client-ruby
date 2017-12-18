@@ -7,6 +7,7 @@ module Assembly
     def self.models
       {
         list: List,
+        assessment: Assessment,
         assessment_point: AssessmentPoint,
         calendar_event: CalendarEvent,
         contact: Contact,
