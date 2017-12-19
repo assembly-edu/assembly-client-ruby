@@ -3,6 +3,12 @@ module Assembly
     include Assembly::Actions::Read
     include Assembly::Actions::List
 
+    def results(params={})
+      pages(path + "#{rank}/results", params)
+    end
+
+    private
+
     def pages(path, params)
       results = []
       page = 1
@@ -13,10 +19,6 @@ module Assembly
         page = ret.next_page
       end
       results
-    end
-
-    def results(params={})
-      pages(path + "#{rank}/results", params)
     end
   end
 
