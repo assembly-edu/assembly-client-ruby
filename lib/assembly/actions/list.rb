@@ -8,6 +8,8 @@ module Assembly
         end
 
         def all(params, client=Assembly.client)
+          params.delete(:page)
+          params.delete(:per_page)
           results = []
           page = 1
           while page
