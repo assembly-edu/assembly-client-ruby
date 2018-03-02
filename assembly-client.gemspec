@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'assembly/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "assembly"
+  spec.name          = "assembly-client"
   spec.version       = Assembly::VERSION
   spec.authors       = ["Assembly Education"]
   spec.email         = ["developers@assembly.education"]

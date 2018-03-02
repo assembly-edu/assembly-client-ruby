@@ -8,6 +8,9 @@
 /spec/reports/
 /tmp/
 
+# RubyGems build
+assembly-client-*.gem
+
 # Non-generic RVM files
 .ruby-gemset
  
