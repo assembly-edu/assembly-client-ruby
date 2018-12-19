@@ -17,18 +17,19 @@ Some examples of how to pull information from the Assembly Platform API using th
 ```ruby
 require 'assembly-client'
 
-Assembly.configure do |config|
-  config.host  = 'https://api-sandbox.assembly.education/'       # For sandbox testing. Use https://api.assembly.education/ for production
-  config.token = 'my_oauth_access_token'
+access_token  = 'school_oauth_access_token'
+refresh_token = 'school_oauth_refresh_token'
 
-  # You do not need this configuration for a quick play with the API. It's only needed for the refresh token OAuth flow.
-  config.auth_host     = 'https://platform-sandbox.assembly.education/'  # For sandbox testing. Use https://platform.assembly.education/ for production
-  config.refresh_token = 'my_oauth_refresh_token'
-  config.client_id     = 'my_app_id'
-  config.client_secret = 'my_app_secret'
+Assembly.configure do |config|
+	config.host  = 'https://api-sandbox.assembly.education/'       # For sandbox testing. Use https://api.assembly.education/ for production
+	
+    # You do not need this configuration for a quick play with the API. It's only needed for the refresh token OAuth flow.
+	config.auth_host     	= 'https://platform-sandbox.assembly.education/'  # For sandbox testing. Use https://platform.assembly.education/ for production
+    config.client_id 		= Rails.application.secrets.assembly_client_id
+    config.client_secret 	= Rails.application.secrets.assembly_client_secret
 end
 
-api = Assembly.client
+api = Assembly.client(token: access_token, refresh_token: refresh_token)
 
 # Fetch all teaching groups (you may know these as classes) for the mathematics subject code.
 maths_groups = api.teaching_groups.all(subject_code: 'MA')
