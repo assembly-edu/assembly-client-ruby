@@ -7,7 +7,7 @@ require 'minitest/spec'
 require 'minitest/reporters'
 require 'minitest/mock'
 
-require 'mocha/mini_test'
+require 'mocha/minitest'
 require 'webmock/minitest'
 
 WebMock.disable_net_connect!
